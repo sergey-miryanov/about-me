@@ -7,6 +7,7 @@
 1. [CPython — сборка мусора изнутри, ч.1 / Хабр](https://habr.com/ru/articles/940642/)
 2. [CPython — Сборка мусора изнутри, ч.2 / Хабр](https://habr.com/ru/articles/951250/)
 3. [CPython — Сборка мусора изнутри, ч.3 / Хабр](https://habr.com/ru/articles/986784/)
+3. [CPython — Сборка мусора изнутри, ч.4 / Хабр](https://habr.com/ru/articles/992026/)
 
 ## Про CPython и Python
 1. [CPython — бессмертные Immortal объекты / Хабр](https://habr.com/ru/articles/929228/)
