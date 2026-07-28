@@ -22,7 +22,7 @@ PyCon Russia 2026
 
 <!-- Slide 2: two screenshots — GitHub cpython PRs (left), Python Developer's Guide (right) -->
 
-## CPython contributor
+## CPython contrиbutor
 
 <div class="columns">
 <div>
@@ -155,7 +155,7 @@ ob_type
 <div class="columns">
 <div>
 
-- Identifies unreachable objects
+- Deduce unreachable objects
 - Calls finalizers
 - Handles weak references
 - Breaks cycles
@@ -172,7 +172,7 @@ def test(n=2000):
             d[(i,j)] = i
 ```
 
-![w:430](images/slide09-bench.png)
+![w:430](images/slide09-bench-en.png)
 
 </div>
 </div>
@@ -188,14 +188,20 @@ def test(n=2000):
 
 - **3.14.0-3.14.4**
   - **Identifies live objects**
-  - **Builds the increment**
-- Identifies unreachable objects
+  - **Fills the increment**
+- Deduce unreachable objects
 - Calls finalizers
 - Handles weak references
 - Breaks cycles
 - *Deletes objects*
 
+<div class="qrnote">
+
+<span class="qrcap">More details here <span class="arrow">→</span></span>
+
 ![w:140](images/slide10-qr.png)
+
+</div>
 
 </div>
 <div>
@@ -208,7 +214,7 @@ def test(n=2000):
             d[(i,j)] = i
 ```
 
-![w:430](images/slide10-bench.png)
+![w:430](images/slide09-bench-en.png)
 
 </div>
 </div>
@@ -527,7 +533,7 @@ struct gc_stats {
 </div>
 <div>
 
-![h:470](images/slide22-terminal.png)
+![h:470](images/slide47-b.png)
 
 </div>
 </div>
@@ -550,7 +556,7 @@ struct gc_stats {
 </div>
 <div>
 
-![h:470](images/slide23-terminal.png)
+![h:470](images/slide47-b.png)
 
 </div>
 </div>
@@ -560,7 +566,7 @@ struct gc_stats {
 ## Pitfalls
 
 - Non-Python processes
-- Child processes
+- Processes tree
 - Race condition
   - Incomplete initialization
   - Partial read
@@ -865,18 +871,16 @@ struct gc_stats {
 <div class="columns">
 <div>
 
-```c {2,9,15,16,21}
+```c {2,8,13,14,19}
 typedef struct _Py_DebugOffsets {
     char cookie[8] _Py_NONSTRING;
     uint64_t version;
     uint64_t free_threaded;
-    // Runtime state offset;
     struct _runtime_state {
         uint64_t size;
         uint64_t finalizing;
         uint64_t interpreters_head;
     } runtime_state;
-    // Interpreter state offset;
     struct _interpreter_state {
         uint64_t size;
         uint64_t id;
@@ -942,7 +946,7 @@ struct _gc_runtime_state {
 </div>
 <div>
 
-<div class="imgwrap"><img src="images/slide46-b.png" height="470"><span class="imglabel">GC Stats Buffer</span></div>
+<div class="imgwrap"><img src="images/slide47-a.png" height="470"><span class="imglabel">GC Stats Buffer</span></div>
 
 </div>
 </div>
@@ -1001,6 +1005,12 @@ struct _gc_runtime_state {
 - Which formats and integrations interest you?
 - What is your environment?
 - What alerts do you envision?
+
+**Where to reach us:**
+
+- [gcmon/issues](https://github.com/sergey-miryanov/gcmon/issues)
+- [discuss.python.org](https://discuss.python.org/)
+- [CPython/issues](https://github.com/python/cpython/issues)
 
 ---
 

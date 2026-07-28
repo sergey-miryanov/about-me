@@ -172,7 +172,7 @@ def test(n=2000):
             d[(i,j)] = i
 ```
 
-![w:430](images/slide09-bench.png)
+![w:430](images/slide09-bench-ru.png)
 
 </div>
 </div>
@@ -195,7 +195,13 @@ def test(n=2000):
 - Разрывает циклы
 - *Удаляет объекты*
 
+<div class="qrnote">
+
+<span class="qrcap">Подробнее здесь <span class="arrow">→</span></span>
+
 ![w:140](images/slide10-qr.png)
+
+</div>
 
 </div>
 <div>
@@ -208,7 +214,7 @@ def test(n=2000):
             d[(i,j)] = i
 ```
 
-![w:430](images/slide10-bench.png)
+![w:430](images/slide09-bench-ru.png)
 
 </div>
 </div>
@@ -527,7 +533,7 @@ struct gc_stats {
 </div>
 <div>
 
-![h:470](images/slide22-terminal.png)
+![h:470](images/slide47-b.png)
 
 </div>
 </div>
@@ -550,7 +556,7 @@ struct gc_stats {
 </div>
 <div>
 
-![h:470](images/slide23-terminal.png)
+![h:470](images/slide47-b.png)
 
 </div>
 </div>
@@ -942,7 +948,7 @@ struct _gc_runtime_state {
 </div>
 <div>
 
-<div class="imgwrap"><img src="images/slide46-b.png" height="470"><span class="imglabel">GC Stats Buffer</span></div>
+<div class="imgwrap"><img src="images/slide47-a.png" height="470"><span class="imglabel">GC Stats Buffer</span></div>
 
 </div>
 </div>
@@ -1001,6 +1007,12 @@ struct _gc_runtime_state {
 - Какие форматы и интеграции вам интересны?
 - Какое ваше окружение?
 - Какие алерты вы видите?
+
+**Куда писать:**
+
+- [gcmon/issues](https://github.com/sergey-miryanov/gcmon/issues)
+- [discuss.python.org](https://discuss.python.org/)
+- [CPython/issues](https://github.com/python/cpython/issues)
 
 ---
 

@@ -85,6 +85,11 @@ section.hlcode .columns > div { min-width: 0; }
 section.frames .llistwrap img { border: none; margin: 0.9em 0 0 0; }
 /* Vertical spacer between stacked lists */
 .vgap { height: 2.2em; }
+/* QR code with an arrow + caption beside it (slide 10) */
+.qrnote { display: flex; align-items: center; gap: 0.5em; margin-top: 0.3em; }
+.qrnote img { margin: 0; }
+.qrnote .qrcap { font-weight: 700; color: #d65d0e; line-height: 1.2; }
+.qrnote .qrcap .arrow { font-size: 1.7em; line-height: 0; vertical-align: -0.15em; margin: 0 0.15em; }
 /* Label pinned to the bottom-left corner of an image */
 .imgwrap { position: relative; display: inline-block; }
 .imgwrap img { display: block; margin: 0; }
