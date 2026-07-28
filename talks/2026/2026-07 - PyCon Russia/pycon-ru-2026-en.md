@@ -687,7 +687,9 @@ struct gc_stats {
 
 <!-- _class: overlay -->
 
-![bg fit](images/slide31-perfetto.png)
+<div class="shot">
+
+![](images/slide31-perfetto.png)
 
 <div class="corner br">
 
@@ -699,11 +701,15 @@ struct gc_stats {
 
 </div>
 
+</div>
+
 ---
 
 <!-- _class: overlay -->
 
-![bg fit](images/slide32-perfetto.png)
+<div class="shot">
+
+![](images/slide32-perfetto.png)
 
 <div class="corner bl">
 
@@ -713,11 +719,15 @@ struct gc_stats {
 
 </div>
 
+</div>
+
 ---
 
 <!-- _class: overlay -->
 
-![bg fit](images/slide33-perfetto.png)
+<div class="shot">
+
+![](images/slide33-perfetto.png)
 
 <div class="corner br">
 
@@ -727,16 +737,22 @@ struct gc_stats {
 
 </div>
 
+</div>
+
 ---
 
 <!-- _class: overlay -->
 
-![bg fit](images/slide34-perfetto.png)
+<div class="shot">
+
+![](images/slide34-perfetto.png)
 
 <div class="corner br">
 
 - Derived metrics
 - Binding to a timestamp
+
+</div>
 
 </div>
 
@@ -746,13 +762,17 @@ struct gc_stats {
 
 <!-- _class: overlay -->
 
-![bg fit](images/slide35-perfetto.png)
+<div class="shot">
+
+![](images/slide35-perfetto.png)
 
 <div class="redbox"></div>
 
 <div class="corner br">
 
 - Additional tracks<br>for derived metrics
+
+</div>
 
 </div>
 
