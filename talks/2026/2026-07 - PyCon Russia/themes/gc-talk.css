@@ -1,0 +1,145 @@
+/* @theme gc-talk */
+
+/* Extends Marp Core's built-in "default" theme with the gruvbox-light look for the
+   GC-monitoring talk. Shared by pycon-ru-2026-ru.md and pycon-ru-2026-en.md — edit here,
+   both decks update. @import must stay first; font/rule overrides win by source order. */
+@import 'default';
+
+@font-face { font-family: "Fira Sans"; font-weight: 400; font-style: normal; src: url("themes/fonts/FiraSans-Regular.ttf"); }
+@font-face { font-family: "Fira Sans"; font-weight: 400; font-style: italic; src: url("themes/fonts/FiraSans-Italic.ttf"); }
+@font-face { font-family: "Fira Sans"; font-weight: 700; font-style: normal; src: url("themes/fonts/FiraSans-Bold.ttf"); }
+@font-face { font-family: "Fira Sans"; font-weight: 700; font-style: italic; src: url("themes/fonts/FiraSans-BoldItalic.ttf"); }
+@font-face { font-family: "Fira Sans Black"; font-weight: normal; src: url("themes/fonts/FiraSans-Black.ttf"); }
+@font-face { font-family: "Ioskeley Mono"; font-weight: 400; font-style: normal; src: url("themes/fonts/IoskeleyMono-Regular.ttf"); }
+@font-face { font-family: "Ioskeley Mono"; font-weight: 400; font-style: italic; src: url("themes/fonts/IoskeleyMono-Italic.ttf"); }
+@font-face { font-family: "Ioskeley Mono"; font-weight: 700; font-style: normal; src: url("themes/fonts/IoskeleyMono-Bold.ttf"); }
+@font-face { font-family: "Ioskeley Mono"; font-weight: 700; font-style: italic; src: url("themes/fonts/IoskeleyMono-BoldItalic.ttf"); }
+section { font-size: 26px; font-family: "Fira Sans", sans-serif; color: #3c3836; background: #fbf1c7; }
+/* Top-align content so the h2 title sits at the same Y on every content slide
+   (Marp's default vertically centers, making the title jump with content height).
+   Lead/title slides opt back into centering below; dividers/overlays set their own layout. */
+section { place-content: safe start center; }
+section.lead { place-content: safe center center; }
+/* Title-less bullet slides that follow a lead section header: vertically centered */
+section.vcenter { place-content: safe center center; }
+pre, code { font-size: 0.78em; font-family: "Ioskeley Mono", "Consolas", "DejaVu Sans Mono", monospace; }
+img { display: block; margin: 0.2em auto; border: 2px solid #d65d0e; }
+h1 { font-size: 1.7em; text-transform: uppercase; font-family: "Fira Sans Black", sans-serif; font-weight: normal; color: #076678; }
+a { color: #076678; }
+h2 { text-transform: uppercase; }
+/* Orange accent bar above content-slide titles (gruvbox) */
+h2::before {
+  content: "";
+  display: block;
+  width: 190px;
+  height: 5px;
+  background: #d65d0e;
+  margin-bottom: 0.3em;
+}
+section.keepcase h1, section.keepcase h2 { text-transform: none; }
+/* Warm panel background behind the whole bullet list (gruvbox bg1) */
+ul { background: #ebdbb2; padding: 0.4em 0.9em 0.4em 1.6em; }
+ul ul { font-size: 0.9em; background: none; padding: 0.2em 0 0.2em 1.2em; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; }
+.columns.center { text-align: center; }
+.columns.top { align-items: start; }
+/* Yellow highlight (matches original link/label style) */
+.hl { background: #fabd2f; padding: 0.05em 0.45em; }
+/* List box (background removed for now) */
+.box { padding: 0.3em 1em 0.3em 0; width: fit-content; }
+.box ul { margin: 0; }
+/* Dense two-column code (fits both structs side by side) */
+section.dense pre { font-size: 0.5em; line-height: 1.25; }
+/* Fenced code nests <pre><code>; make <code> inherit the <pre> size so neither the
+   per-class pre size nor the global `code {0.78em}` rule compounds and shrinks it */
+section.dense pre code, section.wcode pre code, section.hlcode pre code { font-size: 1em; }
+section.dense pre { border: 2px solid #d65d0e; border-radius: 0; overflow-x: auto; }
+section.dense .columns { grid-template-columns: 2fr 1fr; gap: 0.8em; }
+section.dense .columns > div { min-width: 0; }
+/* Two-column code with a wider right column (debug offsets ↔ runtime state) */
+section.wcode .columns { grid-template-columns: 3fr 4fr; gap: 0.9em; align-items: start; }
+section.wcode .columns > div { min-width: 0; }
+section.wcode pre { border: 2px solid #d65d0e; border-radius: 0; font-size: 0.44em; line-height: 1.25; margin: 0 0 0.5em 0; overflow-x: auto; }
+/* Bench code block sized to match the chart image below it */
+section.benchcode pre { border: 2px solid #d65d0e; border-radius: 0; max-width: 100%; margin: 0.3em auto; box-sizing: border-box; }
+section.w430 pre { width: 430px; }
+/* Full-width line-highlight bands for fenced code (```c {n}); markdown-it-highlight-lines
+   emits .highlighted-line, and display:block both draws the band and restores the line break */
+.highlighted-line { display: block; background: #fabd2f; }
+/* Gruvbox-light syntax highlighting — overrides Marp Core's bundled highlight.js theme.
+   Code sits on the cream slide background (transparent), tokens use gruvbox-light hues. */
+pre, pre code.hljs { background: transparent; }
+pre code.hljs { color: #3c3836; }
+.hljs-comment, .hljs-quote { color: #928374; font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-doctag { color: #9d0006; }
+.hljs-type, .hljs-built_in { color: #b57614; }
+.hljs-class .hljs-title { color: #427b58; }
+.hljs-string, .hljs-attr, .hljs-symbol, .hljs-bullet { color: #79740e; }
+.hljs-number, .hljs-meta { color: #8f3f71; }
+.hljs-title, .hljs-title.function_, .hljs-section { color: #076678; }
+.hljs-variable, .hljs-template-variable, .hljs-params { color: #427b58; }
+/* Yellow-bordered plain code block (single column, comfortable size) */
+section.hlcode pre { border: 2px solid #d65d0e; border-radius: 0; font-size: 0.6em; line-height: 1.3; overflow-x: auto; }
+section.hlcode .columns > div { min-width: 0; }
+/* Frame struct + horizontal linked-list diagram (interpreter-frame chain) */
+section.frames .llistwrap img { border: none; margin: 0.9em 0 0 0; }
+/* Vertical spacer between stacked lists */
+.vgap { height: 2.2em; }
+/* Label pinned to the bottom-left corner of an image */
+.imgwrap { position: relative; display: inline-block; }
+.imgwrap img { display: block; margin: 0; }
+.imglabel { position: absolute; left: 0; bottom: 0; background: #d65d0e; color: #000; padding: 0.15em 0.6em; font-size: 1.15em; font-weight: 700; }
+/* Full-bleed image slide with a corner list overlay */
+section.overlay .corner { position: absolute; bottom: 0; background: #ebdbb2; padding: 0.3em 0.9em 0.35em 0.7em; font-size: 1.2em; }
+section.overlay .corner.br { right: 0; }
+section.overlay .corner.bl { left: 0; }
+section.overlay .corner ul { background: #ebdbb2; margin: 0; }
+section.overlay .corner li { margin: 0; line-height: 1.2; }
+/* Red highlight rectangle over part of a full-bleed screenshot */
+section.overlay .redbox { position: absolute; border: 3px solid #cc241d; box-sizing: border-box; left: 13.5%; top: 20%; right: 0; height: 14%; }
+.linkbar { text-align: center; font-size: 1.15em; margin-bottom: 0.8em; }
+.tag { font-size: 1.3em; display: inline-block; margin-bottom: 0.3em; }
+.diag8 { display: grid; grid-template-columns: auto auto; gap: 0.6em; align-items: start; justify-content: center; }
+.diag8 .memlayout { grid-column: 2; grid-row: 1 / 3; }
+.diag8 .panel { border: 2px solid #d65d0e; padding: 0.25em 0.5em; }
+.diag8 .panel img { border: none; margin: 0.15em auto; }
+.diaglabel { font-family: "Ioskeley Mono", monospace; font-size: 0.6em; color: #000; margin: 0.1em 0; }
+.memlayout pre { border: none; background: none; margin: 0.2em 0 0.4em; padding: 0.2em 0.4em; font-size: 0.7em; line-height: 1.7; }
+.memlayout .diaglabel { white-space: nowrap; }
+.hlfield { background: #fabd2f; }
+/* Section-divider layout: big title left, roadmap list right (right-aligned) */
+section.divider { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 2em; }
+section.divider h1 { font-size: 2.4em; margin: 0; }
+.roadmap { font-size: 1.15em; }
+.roadmap ul { background: none; list-style: none; margin: 0; padding: 0; }
+.roadmap li { position: relative; text-align: right; line-height: 1.9; padding-right: 42px; }
+/* Circle marker: filled (orange) for completed+current steps, outline for upcoming */
+.roadmap li::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #d65d0e;
+  background: #d65d0e;
+}
+.roadmap li:has(strong) ~ li::after { background: #fbf1c7; }
+/* Slide number: orange square, flush to bottom-left corner (gruvbox) */
+section::after {
+  left: 0;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  padding: 0;
+  text-align: center;
+  background: #d65d0e;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0;
+}

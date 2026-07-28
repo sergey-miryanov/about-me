@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="645" height="290" viewBox="0 0 645 290">
+  <defs>
+    <marker id="llarr" markerWidth="6" markerHeight="6" refX="4.5" refY="2.5" orient="auto">
+      <path d="M0,0 L5,2.5 L0,5 Z" fill="#d65d0e"/>
+    </marker>
+  </defs>
+
+  <!-- frame blocks (cream fill, orange border) -->
+  <g fill="#fbf1c7" stroke="#d65d0e" stroke-width="2">
+    <rect x="2"   y="2"   width="350" height="282"/>
+    <rect x="400" y="45"  width="145" height="56"/>
+    <rect x="490" y="150" width="145" height="56"/>
+  </g>
+
+  <!-- highlight behind the `previous` line -->
+  <rect x="6" y="40" width="342" height="17" fill="#fabd2f"/>
+
+  <!-- struct code inside the top-left block -->
+  <g xml:space="preserve" font-family="Ioskeley Mono, Consolas, monospace" font-size="12" fill="#000">
+    <text x="10" y="20">struct _PyInterpreterFrame {</text>
+    <text x="10" y="36.2">    _PyStackRef f_executable;</text>
+    <text x="10" y="52.4">    struct _PyInterpreterFrame *previous;</text>
+    <text x="10" y="68.6">    _PyStackRef f_funcobj;</text>
+    <text x="10" y="84.8">    PyObject *f_globals;</text>
+    <text x="10" y="101">    PyObject *f_builtins;</text>
+    <text x="10" y="117.2">    PyObject *f_locals;</text>
+    <text x="10" y="133.4">    PyFrameObject *frame_obj;</text>
+    <text x="10" y="149.6">    _Py_CODEUNIT *instr_ptr;</text>
+    <text x="10" y="165.8">    _PyStackRef *stackpointer;</text>
+    <text x="10" y="182">    uint16_t return_offset;</text>
+    <text x="10" y="198.2">    char owner;</text>
+    <text x="10" y="214.4">    uint8_t visited;</text>
+    <text x="10" y="230.6">    /* Locals and stack */</text>
+    <text x="10" y="246.8">    _PyStackRef localsplus[1];</text>
+    <text x="10" y="263">};</text>
+  </g>
+
+  <!-- compact frame labels -->
+  <g font-family="Fira Sans, Arial, sans-serif" font-size="17" fill="#000" text-anchor="middle" dominant-baseline="central">
+    <text x="472" y="73">frame</text>
+    <text x="562" y="178">frame</text>
+  </g>
+
+  <!-- previous-chain arrows -->
+  <g stroke="#d65d0e" stroke-width="2.5" fill="none" marker-end="url(#llarr)">
+    <line x1="352" y1="49" x2="396" y2="70"/>
+    <line x1="482" y1="101" x2="512" y2="147"/>
+  </g>
+
+  <!-- `previous` link labels -->
+  <g font-family="Ioskeley Mono, Consolas, monospace" font-size="10" fill="#af3a03">
+    <text x="356" y="38">previous</text>
+    <text x="486" y="128">previous</text>
+  </g>
+</svg>

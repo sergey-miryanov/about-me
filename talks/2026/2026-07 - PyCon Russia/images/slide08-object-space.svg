@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="279" viewBox="140 0 560 460">
+  <defs>
+    <marker id="ar" markerWidth="6" markerHeight="6" refX="4.5" refY="2.5" orient="auto">
+      <path d="M0,0 L5,2.5 L0,5 Z" fill="#4472C4"/>
+    </marker>
+  </defs>
+  <!-- edges: L->D, D->C, C->A, A->B, B->C, and A self-loop -->
+  <g stroke="#4472C4" stroke-width="3" fill="none" marker-end="url(#ar)">
+    <line x1="635" y1="100" x2="636" y2="197"/>
+    <line x1="591" y1="243" x2="502" y2="244"/>
+    <line x1="410" y1="244" x2="327" y2="245"/>
+    <line x1="304" y1="285" x2="347" y2="359"/>
+    <line x1="392" y1="359" x2="434" y2="284"/>
+    <path d="M248,212 C150,150 150,350 244,275"/>
+  </g>
+  <!-- nodes: L green, others blue -->
+  <g stroke-width="3">
+    <circle cx="634" cy="54"  r="46" fill="#A9D18E" stroke="#70AD47"/>
+    <circle cx="637" cy="243" r="46" fill="#8FAADC" stroke="#5070A9"/>
+    <circle cx="456" cy="244" r="46" fill="#8FAADC" stroke="#5070A9"/>
+    <circle cx="281" cy="245" r="46" fill="#8FAADC" stroke="#5070A9"/>
+    <circle cx="370" cy="399" r="46" fill="#8FAADC" stroke="#5070A9"/>
+  </g>
+  <g font-family="Fira Sans, Arial, sans-serif" font-size="46" fill="#000" text-anchor="middle">
+    <text x="634" y="54"  dy=".35em">L</text>
+    <text x="637" y="243" dy=".35em">D</text>
+    <text x="456" y="244" dy=".35em">C</text>
+    <text x="281" y="245" dy=".35em">A</text>
+    <text x="370" y="399" dy=".35em">B</text>
+  </g>
+</svg>

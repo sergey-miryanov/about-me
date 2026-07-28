@@ -1,0 +1,16 @@
+{
+  "name": "marp",
+  "version": "1.0.0",
+  "description": "This folder contains the talk **\"Мониторинг событий сборщика мусора в Python: вчера, сегодня, завтра?\"** (PyCon Russia 2026) authored in [Marp](https://marp.app/) — Markdown-based slides. It was converted from `../2026.pdf`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "markdown-it-highlight-lines": "^1.0.2"
+  }
+}
